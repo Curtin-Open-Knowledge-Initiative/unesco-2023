@@ -3,6 +3,7 @@ SELECT
   repos.coki_repository_name as coki_repository_name,
   MAX(repos.url) as url,
   MAX(ror.id) as ror,
+  MAX(CONCAT(CAST(ror.addresses[SAFE_OFFSET(0)].lat as STRING), ", ", CAST(ror.addresses[SAFE_OFFSET(0)].lng as STRING))) as coordinates,
   MAX(ror.country.country_name) as country,
   MAX(ror.country.country_code) as country_code
 
@@ -13,4 +14,3 @@ SELECT
 
 GROUP BY repos.coki_repository_name
 ORDER BY works DESC
-
