@@ -46,6 +46,12 @@ SELECT
   COUNTIF(green) / COUNT(DISTINCT academic_observatory.doi) * 100 as pc_green,
   COUNTIF(bronze) / COUNT(DISTINCT academic_observatory.doi) * 100 as pc_bronze,
   COUNTIF(closed) / COUNT(DISTINCT academic_observatory.doi) * 100 as pc_closed,
+  COUNTIF(gold) as gold,
+  COUNTIF(diamond) as diamond,
+  COUNTIF(hybrid) as hybrid,
+  COUNTIF(green) as green,
+  COUNTIF(bronze) as bronze,
+  COUNTIF(closed) closed,
 
 FROM
   paic_oa_status as oa
